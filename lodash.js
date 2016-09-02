@@ -910,6 +910,7 @@
    * @param {string} key The key of the property to get.
    * @returns {Function} Returns the new accessor function.
    */
+  // 函数功能: 返回一个函数,该函数访问object对象的指定key的值
   function baseProperty(key) {
     return function(object) {
       return object == null ? undefined : object[key];
