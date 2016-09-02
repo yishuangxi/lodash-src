@@ -439,6 +439,7 @@
    * @param {Array} pair The key-value pair to add.
    * @returns {Object} Returns `map`.
    */
+  //函数功能: map操作函数, 直接调用原生的Map.prototype.set函数给map添加key-value
   function addMapEntry(map, pair) {
     // Don't return `map.set` because it's not chainable in IE 11.
     map.set(pair[0], pair[1]);
