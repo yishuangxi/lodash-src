@@ -454,6 +454,8 @@
    * @param {*} value The value to add.
    * @returns {Object} Returns `set`.
    */
+  // 函数功能: 直接调用原生的Set.prototype.add给set添加元素
+  // 将面向对象编程,转换成函数式编程,哇咔咔
   function addSetEntry(set, value) {
     // Don't return `set.add` because it's not chainable in IE 11.
     set.add(value);
