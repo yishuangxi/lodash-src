@@ -756,6 +756,7 @@
    * @param {string} string The string inspect.
    * @returns {number} Returns the string size.
    */
+  //函数功能: asciiSize函数的参数是一个对象obj, 返回值为该对象的length属性值
   var asciiSize = baseProperty('length');
 
   /**
