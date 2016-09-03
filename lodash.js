@@ -774,6 +774,7 @@
    * @param {string} string The string to convert.
    * @returns {Array} Returns the converted array.
    */
+  //函数功能: 字符串转成数组
   function asciiToArray(string) {
     return string.split('');
   }
