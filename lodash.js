@@ -537,7 +537,7 @@
    * @returns {Array} Returns `array`.
    */
   //函数功能: 从右向左遍历数组
-  //任何一次iteratee函数返回值为false,都讲终止遍历, 返回值为原数组
+  //任何一次iteratee函数返回值为false,都将终止遍历, 返回值为原数组
   function arrayEachRight(array, iteratee) {
     var length = array ? array.length : 0;
 
@@ -692,13 +692,15 @@
    * @returns {*} Returns the accumulated value.
    */
   // 函数功能: reduce函数
-  // initAccum: 是否使用accumulator作为初始accumulator,标识是否使用accumulator作为初始值
-  // iteratee函数参数为上一次的accumulator, 当前遍历的数组元素,当前遍历的数组索引,以及当前数组的引用, 计算出来的结果, 重新赋值给accumulator
+  // 重点解释后2个参数: accumulator, initAccum
+  // accumulator: 初始值
+  // initAccum: 是否使用第数组第一个元素作为初始值, 如果该值为true,则accumulator失效
   function arrayReduce(array, iteratee, accumulator, initAccum) {
     var index = -1,
         length = array ? array.length : 0;
 
     if (initAccum && length) {
+      //注意这里的++index运算
       accumulator = array[++index];
     }
     while (++index < length) {
@@ -719,6 +721,8 @@
    *  the initial value.
    * @returns {*} Returns the accumulated value.
    */
+  //函数功能: 从右边开始进行reduce计算
+  // initAccum: 是否使用最右边值作为初始值进行计算
   function arrayReduceRight(array, iteratee, accumulator, initAccum) {
     var length = array ? array.length : 0;
     if (initAccum && length) {
@@ -740,6 +744,7 @@
    * @returns {boolean} Returns `true` if any element passes the predicate check,
    *  else `false`.
    */
+  // 函数功能: array中任何一个元素是否能让函数predicate返回值为真,如果是,则返回true,否则返回false
   function arraySome(array, predicate) {
     var index = -1,
         length = array ? array.length : 0;
