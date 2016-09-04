@@ -874,6 +874,8 @@
    * @param {Function} comparator The comparator invoked per element.
    * @returns {number} Returns the index of the matched value, else `-1`.
    */
+  // 函数功能: 对array数组, 从fromIndex位置开始查找, 直到找到能让comparator函数返回值真的元素
+  // 函数comparator的参数就是value和从array中遍历出来的当前元素
   function baseIndexOfWith(array, value, fromIndex, comparator) {
     var index = fromIndex - 1,
         length = array.length;
@@ -907,6 +909,7 @@
    * @param {Function} iteratee The function invoked per iteration.
    * @returns {number} Returns the mean.
    */
+  // 函数功能: 求平均值, 对array求和,取其平均值, 其中,每一个元素的值由iteratee函数决定
   function baseMean(array, iteratee) {
     var length = array ? array.length : 0;
     return length ? (baseSum(array, iteratee) / length) : NAN;
@@ -990,6 +993,8 @@
    * @param {Function} iteratee The function invoked per iteration.
    * @returns {number} Returns the sum.
    */
+  // 函数功能: 遍历array中的元素, 并累加iteratee函数的返回值
+  // 其中, iteratee的参数是array数组的元素
   function baseSum(array, iteratee) {
     var result,
         index = -1,
@@ -998,6 +1003,7 @@
     while (++index < length) {
       var current = iteratee(array[index]);
       if (current !== undefined) {
+        //过滤掉iteratee函数返回值为undefined的值
         result = result === undefined ? current : (result + current);
       }
     }
