@@ -936,6 +936,7 @@
    * @param {Object} object The object to query.
    * @returns {Function} Returns the new accessor function.
    */
+  // 函数功能: 返回一个函数f, 该函数f的参数为object对象的key, 返回结果为object[key]
   function basePropertyOf(object) {
     return function(key) {
       return object == null ? undefined : object[key];
