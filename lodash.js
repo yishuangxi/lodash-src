@@ -1020,6 +1020,7 @@
    * @param {Function} iteratee The function invoked per iteration.
    * @returns {Array} Returns the array of results.
    */
+  // 函数功能: 从0-n, 执行iteratee函数, 返回值为iteratee依次执行的结果组成的数组
   function baseTimes(n, iteratee) {
     var index = -1,
         result = Array(n);
@@ -1039,6 +1040,7 @@
    * @param {Array} props The property names to get values for.
    * @returns {Object} Returns the key-value pairs.
    */
+  // 函数功能:
   function baseToPairs(object, props) {
     return arrayMap(props, function(key) {
       return [key, object[key]];
@@ -1052,6 +1054,7 @@
    * @param {Function} func The function to cap arguments for.
    * @returns {Function} Returns the new capped function.
    */
+  // 函数功能: 返回一个函数,该函数内部执行func函数, 参数为后续的value
   function baseUnary(func) {
     return function(value) {
       return func(value);
@@ -1068,6 +1071,7 @@
    * @param {Array} props The property names to get values for.
    * @returns {Object} Returns the array of property values.
    */
+  // 函数功能: 返回object中指定属性列表中的value组成的数组
   function baseValues(object, props) {
     return arrayMap(props, function(key) {
       return object[key];
@@ -1082,6 +1086,7 @@
    * @param {string} key The key of the entry to check.
    * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
    */
+  // 函数功能:
   function cacheHas(cache, key) {
     return cache.has(key);
   }
@@ -1095,6 +1100,7 @@
    * @param {Array} chrSymbols The character symbols to find.
    * @returns {number} Returns the index of the first unmatched string symbol.
    */
+  // 函数功能:
   function charsStartIndex(strSymbols, chrSymbols) {
     var index = -1,
         length = strSymbols.length;
