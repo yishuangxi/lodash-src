@@ -362,6 +362,7 @@
   };
 
   /** Used to map characters to HTML entities. */
+  //html中需要转义的字符
   var htmlEscapes = {
     '&': '&amp;',
     '<': '&lt;',
@@ -371,6 +372,7 @@
   };
 
   /** Used to map HTML entities to characters. */
+  //html中反转义字符
   var htmlUnescapes = {
     '&amp;': '&',
     '&lt;': '<',
@@ -1156,7 +1158,7 @@
    * @param {string} letter The matched letter to deburr.
    * @returns {string} Returns the deburred letter.
    */
-    //函数功能:
+    //函数功能: 生成一个获取属性值的函数,deburrLetter, 从对象deburredLetters中通过key获取value
   var deburrLetter = basePropertyOf(deburredLetters);
 
   /**
@@ -1166,6 +1168,7 @@
    * @param {string} chr The matched character to escape.
    * @returns {string} Returns the escaped character.
    */
+    //函数功能: 生成一个函数,该函数从htmlEscapes中通过key取值
   var escapeHtmlChar = basePropertyOf(htmlEscapes);
 
   /**
