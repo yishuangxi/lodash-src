@@ -1086,7 +1086,7 @@
    * @param {string} key The key of the entry to check.
    * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
    */
-  // 函数功能:
+  // 函数功能:判断对象cache是否有key
   function cacheHas(cache, key) {
     return cache.has(key);
   }
@@ -1100,11 +1100,12 @@
    * @param {Array} chrSymbols The character symbols to find.
    * @returns {number} Returns the index of the first unmatched string symbol.
    */
-  // 函数功能:
+  // 函数功能: 遍历strSymbls, 直到chrSymbols中找不到strsSymbols[index], 返回该索引index
   function charsStartIndex(strSymbols, chrSymbols) {
     var index = -1,
         length = strSymbols.length;
 
+    //遍历strSymbls, 直到chrSymbols中找不到strsSymbols[index], f
     while (++index < length && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {}
     return index;
   }
@@ -1118,6 +1119,7 @@
    * @param {Array} chrSymbols The character symbols to find.
    * @returns {number} Returns the index of the last unmatched string symbol.
    */
+  // 函数功能: 反向遍历strSymbols, 直到在chrSymbols中找不到strSymbols[index]的时候,返回该索引
   function charsEndIndex(strSymbols, chrSymbols) {
     var index = strSymbols.length;
 
@@ -1133,6 +1135,7 @@
    * @param {*} placeholder The placeholder to search for.
    * @returns {number} Returns the placeholder count.
    */
+  //函数功能: 统计placeholder在数组array中出现的次数
   function countHolders(array, placeholder) {
     var length = array.length,
         result = 0;
@@ -1153,6 +1156,7 @@
    * @param {string} letter The matched letter to deburr.
    * @returns {string} Returns the deburred letter.
    */
+    //函数功能:
   var deburrLetter = basePropertyOf(deburredLetters);
 
   /**
